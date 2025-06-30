@@ -25,6 +25,8 @@
 - Make sure to **add the calendar id you want to manage under settings.
 ![Google Scripts editor](screenshots/id_add_1.png)![Google Scripts editor](screenshots/id_add_2.png)
 
+-Most issues can be resolved by making sure that your calendar, sheet and apps script are all on the same time zone as per the  images below...
+![Google Scripts editor](screenshots/appsScripts_timezone.png)![Google Scripts editor](screenshots/calendar_timezone.png)![Google Scripts editor](screenshots/sheet_timezone.png)
 ### Sample Spreadsheet
 
 That's a sample of a [spreadsheet already correctly formatted](https://docs.google.com/spreadsheets/d/1hsIxXIkFrDHC8NgcDzTdn_vYz3YZD4BjpjiNrdJPFS0/edit?usp=sharing) to work with the following script.
