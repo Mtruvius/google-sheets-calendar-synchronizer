@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <base target="_top" />
+    <?!= include('style'); ?>
+    <script src="https://unpkg.com/@dotlottie/player-component@2.7.12/dist/dotlottie-player.mjs" type="module"></script>
+</head>
+<body>
+
+    <dotlottie-player src="https://lottie.host/2273a254-1d7c-4f66-b238-e208dadbc1da/zyG0rSDVmd.lottie"
+                      id="loading_ico"
+                      background="transparent"
+                      speed="1"
+                      direction="1"
+                      playMode="forward"
+                      loop
+                      autoplay>
+    </dotlottie-player>
+    <form id="dateRange">
+        <label for="start">From:</label>
+        <input type="date" id="start" name="start" />
+        <label for="end">To:</label>
+        <input type="date" id="end" name="end" />
+    </form>
+    <button id="dateRangeSubmitBtn" title="Submit" onclick="getData()">Submit</button>
+</body>
+   <?!= include('javascript'); ?>
+</html>

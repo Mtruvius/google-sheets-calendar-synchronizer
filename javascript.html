@@ -1,0 +1,32 @@
+<script>
+    var loading = document.getElementById('loading_ico');
+    var form = document.getElementById('dateRange');
+    var startInput = document.getElementById('start');
+    var endInput = document.getElementById('end');
+    var minYear = new Date().getFullYear() - 1 + '-01-01';
+    var maxYear = new Date().getFullYear() + 3 + '-12-31';
+    var today = new Date();
+    var tomorrow = new Date(today);
+    tomorrow.setDate(today.getDate() + 1);
+
+    async function getData() {
+        form.style.display = 'none';
+        loading.style.display = 'flex';
+        const formData = new FormData(form);
+        const dataObject = Object.fromEntries(formData.entries());
+        await google.script.run.withSuccessHandler(closeDialog).AddEventsToSheet(dataObject);
+    }
+
+    function closeDialog() {
+        form.style.display = 'flex';
+        loading.style.display = 'none';
+        google.script.host.close();
+    }
+
+    startInput.value = today.toISOString().split('T')[0];
+    startInput.min = minYear;
+    startInput.max = maxYear;
+    endInput.value = tomorrow.toISOString().split('T')[0];
+    endInput.min = minYear;
+    endInput.max = maxYear;
+</script>
